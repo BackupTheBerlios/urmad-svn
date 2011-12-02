@@ -1,0 +1,140 @@
+\documentclass{article}
+
+\usepackage{url}
+\usepackage{anysize}
+\marginsize{2cm}{2cm}{2cm}{2cm}
+\usepackage{xcolor}
+\usepackage{array}
+
+\newcommand{\todo}[1]{\textcolor{red}{#1}}
+
+\setlength{\parindent}{0cm}
+\setlength{\parskip}{0.2cm}
+
+\title{\texttt{urMAD}\hspace{0.5cm} Grand Challenge ICMI'12}
+\author{\textbf{u}nification and \textbf{r}eformation of
+ \textbf{M}ultimodal \textbf{A}nnotations and \textbf{D}atasets}
+\date{}
+
+\begin{document}
+ \maketitle
+ \hrule
+ \vspace{0.1cm}
+ \hrule
+ \tableofcontents
+ \vspace{0.5cm}
+ \hrule
+ \vspace{0.1cm}
+ \hrule
+
+ \section{Preface}
+ \label{sec:preface}
+I would expect that people could be split in three groups after reading this document according to their a posteriori
+feelings:
+\begin{description}
+ \item [indifferent] Of course. Even if this is a hot topic, not everybody will be interested on it. \textit{What to
+do?} Please forward this document to the colleagues of yours that may be interested.
+ \item [excited] Great! We want you to collaborate with us in this project. \textit{What to do?} Please, contact us. We
+will keep you updated!
+ \item [angry] Because (part of) the project has been already done by you/your colleagues. \textit{What to do?} Please
+let us know! This is a proposal and we are willing to make it consistent with the state-of-the-art and sound. Your
+comments and feedback are really valuable to us.
+\end{description}
+
+
+ \section{Aim}
+  Create an unified framework in order to:
+ \begin{enumerate}
+  \item define the basic concepts related to multimodal dataset description, annotation and evaluation,
+  \item define a set of criteria to annotate multimodal datasets,
+  \item define/choose metrics to evaluate algorithms working on these datasets.
+ \end{enumerate}
+Of course there is a lot of work to do to converge to such unified framework. However, it would be nice to set up the
+main guidelines. We should not forget that this ia long-term objective, which is not going to be reached in some
+months, but in a few years. A road map of what is missing, how to do it and when would be really useful too.
+
+ \section{Introduction}
+ The interest of the research community in the field of multimodal interaction has been growing during the last decades.
+New sensors (haptics, depth, high resolution cameras, microphone arrays, accelerometers) have been developped and some
+of them have been commercialized as consumer sensors (e.g. Kinect). This speeded up the research on multimodal
+interaction and pushed the developpement of new algorithms to release software able to deal with combinations of such
+sensors.
+
+As a natural fact, researchers are interested in different problems and applications. That is why, the current
+multimodal datasets are designed, annotated and evaluated depending on the task they should be useful to solve.
+Regardless the application targeted, the data may be worth to other researchers approaching other type of problems.
+That is why, we propose the \texttt{urMAD} Grand Challenge. As stated before, the aim of \texttt{urMAD} is the genesis
+of a common framework for description, annotation and evaluation of multimodal datasets.
+
+It is not our purpose to create a standard, but a formal way to describe data/tools that were acquired/desgined for
+different aims, targetting different applications and from non-triavially-compatible points of view.
+
+ \section{Tasks}
+
+One of the first problems we will encounter when creating this new framework will be at a conceptual level. The beauty
+of the Multimodal Interaction community is the multidisciplinary background of its members. This is expressed in
+completely different points of view and conceptual differences and disagreements, that is, asimilar ways to understand
+the same problem/phenomena and hence, to draw conclusions. We believe we need an agreement on some basic concepts. These
+will set up the basis for further definitions and descriptions and we will be able to compare datasets, annotation
+formats and tools, evaluation metrics, etc.
+
+We may not need to create a new definition for most of the concepts, but choose one (or a mixture of some)
+definition which people from different communities feel comfortable with. Candidates for concepts to (re)define are in
+the following incomplete list: ground truth, annotation, event, sequence, dataset, scenario, multimodal, modality,
+stream, ...
+
+Once we have done that, we would be able to call for several tasks; all of them aimming the unification and
+reformattion of multimodal annotations and datasets. Such tasks would be, but not only:
+\begin{description}
+ \item [formats] Survey and design proposal of multimodal annotation formats. Of course there exist many
+annotation formats, some of them useful to annotate multimodal data. The aim here is to have a fully detailed survey of
+annotation formats as well as their avantages and drawbacks. We would be able to further improve them and converge
+towards a format that is general enough to annotate data coming from any modality. The format should be public, since
+we want this format to be used for all researchers working un multmimodal interaction.
+
+ \item [tools] Survey and design proposal of multimodal annotation tools. As in the formats, there are many annotation
+tools. We would like to have a nice survey on them and a design proposal that would satisfy the chosen format. This
+tool should be publicly available and OpenSource, if possible, since many researchers would like to add their modules
+(it is very naive to think about an annotation tool able to annotate data from all modalities).
+
+ \item [datasets] Survey and characterization of multimodal datasets. The survey should point out different
+strenghnesses and weaknesses of the datasets. Also, the vocabulary stablished should facilitate the characterization of
+such datasets.
+
+ \item [evaluation metrics] Survey and design proposal of evaluation metrics. A lot of metrics exist to evaluate
+different multimodal tasks. It would be nice to have them in a survey and to evaluate their potential and limitations.
+\end{description}
+
+ \section{Format}
+ We need to choose a format for the \texttt{urMAD} Grand Challenge and to reformat the proposal according to the call
+for Challenges (\url{http://www.acm.org/icmi/2012/index.php?id=cfc}), that is:
+\begin{itemize}
+ \item Title
+ \item Abstract appropriate for possible Web promotion of the Challenge
+ \item Detailed description of the challenge and its relevance to multimodal interaction.
+ \item Plan for soliciting participation
+ \item Proposed schedule for releasing datasets and receiving submissions.
+ \item Short bio of the organizers
+ \item Funding source (if any) that supports or could support the challenge organization.
+ \item Preference (if any) for special session or workshop format.
+\end{itemize}
+with a maximum number of five pages.
+
+ \section{Contact}
+ Right now there is just one contact person.\vspace{0.2cm}\\
+ Xavier Alameda-Pineda, find me at: \url{xavier.alameda-pineda@inria.fr}\vspace{0.2cm}\\
+ I hope people will be interested in such Grand Challenge and we will create a nice working group. It would be nice to
+have support resources, like SVN repositories, wikies, ... I am working on it, at least to be able to collaboratively
+write the proposal.\vspace{0.3cm}\\
+Thank you for reading. Please do not forget to re-read Section \ref{sec:preface}.
+
+%   \section*{Notes}
+%   Contact the guy of: \url{http://www.clear-evaluation.org}
+% 
+% ELAN: \cite{Sloetjes2008} A nice framework to annotate multmimedia data. Also trying to work towards the DCR of
+% the ISO.
+% 
+% \bibliographystyle{plain}
+% \bibliography{../BibliographyMendeley/AnnotationTools}
+
+\end{document}
