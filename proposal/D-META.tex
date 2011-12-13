@@ -71,9 +71,9 @@
 \numberofauthors{3}
 \author{
 \alignauthor Xavier Alameda-Pineda \\
-\affaddr{INRIA Grenoble Rh\^one-Alpes,} 
+\affaddr{Perception Team,} 
 \affaddr{655, Av. Europe, 38334 Montbonnot,} 
-\affaddr{University of Grenoble, France} \\
+\affaddr{INRIA Rh\^one-Alpes, University of Grenoble, France} \\
 \email{xavier.alameda-pineda@inria.fr}
 % Adjunct Professor of Language Technology
 % University of Helsinki
@@ -90,9 +90,8 @@
 } 
 
 
-% \conferenceinfo{ICMI'11,} {November 14--18, 2011, Alicante, Spain.}
-% \CopyrightYear{2011}
-% \crdata{978-1-4503-0641-6/11/11}
+\toappear{}
+
 % \clubpenalty=10000
 % \widowpenalty = 10000
 
@@ -102,26 +101,75 @@
 aasdf
 \end{abstract}
 \section{Introduction}
+Machine learning-based tasks have been gainning importance in the last decades. This lead to several interesting
+challenges such as the PASCAL Visual Object Classes \cite{PascalVOC}, the Active Learning challenge
+\cite{ActiveLearning} or the Speller \cite{Speller}. In addition, several tool have been developed to evaluate the
+annotation also in the form of challenge (see \cite{Give}). Becuase the fields they are related to (visual object
+recognition, active learning from unlabelled data and spell correction respectively) are mature, the evaluation systems
+are accepted by the community and everybody uses them. However, all these challenges are monodal, meaning that the data
+is acquired with one type of sensor.\vspace{0.3cm}
+
+Such machine learning-like challenge does not exist in the Multimodal Interaction community. This is because the
+targetted applications are much more diverse, and so they are the acquired data sets and their annotations. Some issues
+need to be addressed when proposing such challenges:
+\begin{description}
+ \item [Data sets] A few data sets need to be selected. These should be as much versatile as possible to in order to
+handle different multimodal applications. In addition, the data sets should be publicly available and free, in order to
+guarantee a fair participation in the challenge.
+ \item [Evaluation metrics] They should be set up by the challenge, providing for a faire evaluation between different
+methods.
+ \item [Annotations] They should be provided with the data set. We are interested also in evaluating these annotations
+to converge towards consistently annotated data sets.
+\end{description}
+However, the materials and methods exist to make possible challenges related to multimodal applications.\vspace{0.3cm}
+
+
+
 
 \section{Description}
-The ultimate goal of the \texttt{D-META} Grand Challenge is to define a framework unifying the annotations of multimodal
-data sets. This framework would be extremely useful, since researchers all over the world would be able
-to compare their algorithms, assuming some standard annotation. At the same time, they would annotate their data sets
-under this framework and provide to these data sets world-wide visibility.
+The long-term goal of the \texttt{D-META} Grand Challenge is to provide an unified framework of Multimodal data sets,
+with precises annotations and related applications, in order to benchmark methods targeting diverse multimodal
+applications as well as evaluating annotation systems. This framework will allow researchers in the Multimodal
+Interaction community to share their data sets in a structured fashion.\vspace{0.3cm}
 
-Unfortunately, we are far from this goal because of several reasons (\todo{rephrase and cite})
-\begin{itemize}
- \item annotation depends on application target
- \item exist conceptual differences between researchers
- \item such framework should take into account all kind of sensors, which is already very difficult due to the existing
-variety of sensors and the creation of new sensors
-\end{itemize}
+Hold by these two fundamental pillars, method benchmarking and annotation evaluation, the \texttt{D-META} challenge
+will set up the basis to converge towaards the long-term goal of an unified framework. Notice how the two main pillars
+are coupled and complementary.\vspace{0.3cm}
 
-This is why we believe that such a framework does not have to be imposed to (accepted by) the community, but built from
-the community little by little.
+On one hand, since multimodal data sets are expensive (both in acquisition and annotation), they are often partially
+annotated, just to satisfy the targetted application. In addition, the provided annotation may have place for
+improvement. Providing a framework that unifies annotations on data sets will ease two tasks: 1) the genesis of
+cross-validated annotations and 2) the use of such data sets by the community. Hence, methods targetting multimodal
+applications may be benchmarked using several common data sets in a transparent way.\vspace{0.3cm}
 
+On the other hand, the set up of an application-oriented challenge will encourage researchers to work with other data
+sets than thirs. Thus, annotations of these data sets will have to be rich and precise. Systematic evaluation
+techniquest will be required to provide for such annotations which, in turn, will be needed to have a clear
+benchmarking of methods targetting multimodal applications.\vspace{0.3cm}
+
+In summary, we envision \texttt{D-META} as a two coupled-branch long-term genesis of an unified framework aiming
+transparent and publicly available application and annotation evaluation on multimodal data sets.
 
 \section{Participation plan and schedule}
+In order to set up this Grand Challenge, wi will choose a few existing publicly-available multimodal data sets useful
+for different multimodal applications and/or several annotation evaluations. This choice will be public within the call
+for papers. Authors may submit their methods/Benchmarks for applications and/or their systems/comparisons for
+annotations and itd evaluation.\vspace{0.3cm}
+
+The schedule has the following important dates:
+\begin{description}
+ \item[30-Jan-2012] Web site set up.\\
+ The site will be ready by the end of January and it will contain the main ambitions of \texttt{D-META}, what do we
+envision and organisation issues. All the information will be published there.
+ \item[19-Mar-2012] Call for papers (with data set choice)\\
+ The call for papers will be ready before April, and it will explain what are we looking for (more precisely) and what
+is more important, the data sets to work with.
+ \item[15-Jun-2012] Paper deadline
+ \item[24-Aug-2012] Author notification
+ \item[14-Sep-2012] Camera-ready
+ \item[Oct-2012] Presentations at ICMI'2012
+\end{description}
+
 
 \section{Organizers' bio}
 \subsection{Xavier Alameda-Pineda}
@@ -131,5 +179,8 @@ the community little by little.
 \section{Funding}
 
 \section{Format}
+
+\bibliographystyle{plain}
+\bibliography{D-META}
 
 \end{document}
