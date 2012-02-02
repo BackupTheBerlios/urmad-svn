@@ -1,4 +1,4 @@
-\documentclass{sig-alternate}
+\documentclass[a4paper]{article}
 
 % The following packages can be found on http:\\www.ctan.org
 \usepackage{graphicx} % for pdf, bitmapped graphics files
@@ -23,6 +23,9 @@
 
 \usepackage[small,bf]{caption}
 
+\usepackage{anysize}
+\marginsize{2cm}{2cm}{2cm}{2cm}
+
 \usepackage{color}
 \definecolor{darkgreen}{rgb}{0.0,0.5,0.0}
 \definecolor{red}{rgb}{1.0,0.0,0.0}
@@ -38,217 +41,175 @@
 
 \begin{document}
 
+\begin{figure}
+\vspace{-3.3cm}
+\hspace{-2.2cm}
+\includegraphics[width=1.25\textwidth]{Banner.jpg}\vspace{0.2cm}\\
+\end{figure}
 
-\title{D-META Grand Challenge}
-\subtitle{Data sets for Multimodal Evaluation of Tasks and Annotations}
-% \subtitle{}
-% %
-% % You need the command \numberofauthors to handle the 'placement
-% % and alignment' of the authors beneath the title.
-% %
-% % For aesthetic reasons, we recommend 'three authors at a time'
-% % i.e. three 'name/affiliation blocks' be placed beneath the title.
-% %
-% % NOTE: You are NOT restricted in how many 'rows' of
-% % "name/affiliations" may appear. We just ask that you restrict
-% % the number of 'columns' to three.
-% %
-% % Because of the available 'opening page real-estate'
-% % we ask you to refrain from putting more than six authors
-% % (two rows with three columns) beneath the article title.
-% % More than six makes the first-page appear very cluttered indeed.
-% %
-% % Use the \alignauthor commands to handle the names
-% % and affiliations for an 'aesthetic maximum' of six authors.
-% % Add names, affiliations, addresses for
-% % the seventh etc. author(s) as the argument for the
-% % \additionalauthors command.
-% % These 'additional authors' will be output/set for you
-% % without further effort on your part as the last section in
-% % the body of your article BEFORE References or any Appendices.
-%
 
-\numberofauthors{3}
-\author{
-\alignauthor Xavier Alameda-Pineda \vspace{0.2cm}\\
-\affaddr{Perception Team,} 
-\affaddr{655, Av. Europe, 38334 Montbonnot,} 
-\affaddr{INRIA Rh\^one-Alpes, University of Grenoble, France} \vspace{0.2cm}\\
-\email{\normalsize xavier.alameda-pineda@inria.fr}
-% Adjunct Professor of Language Technology
-% University of Helsinki
-\alignauthor{Dirk Heylen} \vspace{0.2cm}\\
-\affaddr{Human Media Interaction,} 
-\affaddr{PO BOX 217, 7500 AE Enschede,}
-\affaddr{University of Twente, The Netherlands}\vspace{0.2cm}\\
-\email{\normalsize d.k.j.heylen@utwente.nl}
-\alignauthor Kristiina Jokinen \vspace{0.2cm}\\
-\affaddr{Department of Behavioural Sciences,}
-\affaddr{PO BOX 9, FIN-00014,}
-\affaddr{University of Helsinki, Finland}\vspace{0.2cm}\\
-\email{\normalsize kristiina.jokinen@helsinki.fi}
+\begin{center}
+{\LARGE
+\texttt{D-META} Grand Challenge -- Call for papers
 } 
+\end{center}
+\vspace{0.5cm}
 
 
-\toappear{}
 
-% \clubpenalty=10000
-% \widowpenalty = 10000
+% \numberofauthors{3}
+% \author{
+% \alignauthor Xavier Alameda-Pineda \vspace{0.2cm}\\
+% \affaddr{Perception Team,} 
+% \affaddr{655, Av. Europe, 38334 Montbonnot,} 
+% \affaddr{INRIA Rh\^one-Alpes, University of Grenoble, France} \vspace{0.2cm}\\
+% \email{\normalsize xavier.alameda-pineda@inria.fr}
+% % Adjunct Professor of Language Technology
+% % University of Helsinki
+% \alignauthor{Dirk Heylen} \vspace{0.2cm}\\
+% \affaddr{Human Media Interaction,} 
+% \affaddr{PO BOX 217, 7500 AE Enschede,}
+% \affaddr{University of Twente, The Netherlands}\vspace{0.2cm}\\
+% \email{\normalsize d.k.j.heylen@utwente.nl}
+% \alignauthor Kristiina Jokinen \vspace{0.2cm}\\
+% \affaddr{Department of Behavioural Sciences,}
+% \affaddr{PO BOX 9, FIN-00014,}
+% \affaddr{University of Helsinki, Finland}\vspace{0.2cm}\\
+% \email{\normalsize kristiina.jokinen@helsinki.fi}
+% } 
 
-\maketitle
+
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\begin{abstract}
-In this paper we propose the \texttt{D-META} Grand Challenge, to set up the basis for comparison, analysis, and further
-improvement of multimodal data annotations and multimodal interactive systems. Such machine learning-based challenges do
-not exist in the Multimodal Interaction community. The main goal of this Grand Challenge is to foster research and
-development in multimodal communication and to further elaborate algorithms and techniques for building various
-multimodal applications. Held by two coupled pillars, method benchmarking and annotation evaluation, the \texttt{D-META}
-challenge envisions a starting point for transparent and publicly available application and annotation evaluation on
-multimodal data sets. The paper describes the motivations of the challenge, the conceptual background in which the
-challenge is based as well as several practical issues necessary to set up the \texttt{D-META} challenge.
-\end{abstract}
-\section{Introduction}
-Machine learning-based tasks have been gaining importance in the last decades. This led to several interesting
-challenges such as the PASCAL Visual Object Classes \cite{PascalVOC}, the Active Learning challenge
-\cite{ActiveLearning} or the Speller \cite{Speller}. In addition, several tools have been developed to evaluate the
-annotation also in the form of a challenge such as the Natural Language Generation Challenge \cite{Give} or
-the Spoken Dialogue Challenge \cite{SDS}. Because the fields they are related to
-(visual object recognition, active learning from unlabeled data, spell correction, ...) are mature, the
-evaluation systems are accepted by the community. However, all these challenges are monomodal,
-meaning that the data is acquired with one type of sensor.\vspace{0.4cm}
+\begin{center}
+\begin{minipage}{0.92\textwidth}
+{\small
+The \texttt{D-META} Grand Challenge aims to set up the basis for comparison, analysis, and further improvement of
+multimodal data annotations and multimodal interactive systems. The main goal of this Grand Challenge is to foster
+research and development in multimodal communication and to further elaborate algorithms and techniques for building
+various multimodal applications. Held by two coupled pillars, method benchmarking and annotation evaluation, the
+\texttt{D-META} challenge envisions a starting point for transparent and publicly available application and annotation
+evaluation on multimodal data sets.}
+\end{minipage}
+\end{center}
+\vspace{0.5cm}
 
-Similar challenges do not exist in the Multimodal Interaction community. Because we believe that this kind of
-challenges are constructive, in this paper we suggest to setup a challenge so as to allow comparison,
-analysis, and further development of multimodal data annotations and multimodal interactive systems. We believe that the
-challenge has a positive impact on the field and that it will help to increase our understanding of the varied tasks and
-activities related to the area. In addition, we are enthusiastic about it since this will provide for more robust and 
-natural automatic systems, as well as guidelines towards shared methods and concepts so at to support comparison and
-evaluation of such systems. Indeed, setting up the \texttt{D-META} challenge is demanding and even ambitious: the
-diversity of targeted applications, the acquired data sets and their annotations, make the task a challenge in itself.
-Some issues need to be addressed when proposing such challenges:
+% \section{Introduction}
+% Machine learning-based tasks have been gaining importance in the last decades. This led to several interesting
+% challenges such as the PASCAL Visual Object Classes \cite{PascalVOC}, the Active Learning challenge
+% \cite{ActiveLearning} or the Speller \cite{Speller}. In addition, several tools have been developed to evaluate the
+% annotation also in the form of a challenge such as the Natural Language Generation Challenge \cite{Give} or
+% the Spoken Dialogue Challenge \cite{SDS}. Because the fields they are related to
+% (visual object recognition, active learning from unlabeled data, spell correction, ...) are mature, the
+% evaluation systems are accepted by the community. However, all these challenges are monomodal,
+% meaning that the data is acquired with one type of sensor.\vspace{0.4cm}
+% 
+% Similar challenges do not exist in the Multimodal Interaction community. Because we believe that this kind of
+% challenges are constructive, in this paper we suggest to setup a challenge so as to allow comparison,
+% analysis, and further development of multimodal data annotations and multimodal interactive systems. We believe that
+% the
+% challenge has a positive impact on the field and that it will help to increase our understanding of the varied tasks
+% and
+% activities related to the area. In addition, we are enthusiastic about it since this will provide for more robust and 
+% natural automatic systems, as well as guidelines towards shared methods and concepts so at to support comparison and
+% evaluation of such systems. Indeed, setting up the \texttt{D-META} challenge is demanding and even ambitious: the
+% diversity of targeted applications, the acquired data sets and their annotations, make the task a challenge in itself.
+% Some issues need to be addressed when proposing such challenges:
+% \begin{description}
+%  \item [Data sets] A few data sets need to be selected. These should be as much versatile as possible to in order to
+% handle different multimodal applications. In addition, the data sets should be publicly available and free, in order
+% to
+% guarantee a fair participation in the challenge.
+%  \item [Evaluation metrics] They should be set up by the challenge in the call for papers, although we are looking
+% forward to the evolution of these metrics in order to be accepted by the community.
+%  \item [Annotations] They should be provided with the data set. We are interested also in evaluating these annotations
+% to converge towards consistently annotated data sets.
+% \end{description}
+% 
+% Following the Spoken Dialogue Challenge, we want to keep the first round fairly simple and clear, so as to obtain
+% feedback from the community and to gather experience for growing the challenge, in the coming years, to cover more
+% varied activities, tools and annotation levels.\vspace{0.4cm}
+% 
+% In the next, we describe the main properties of \texttt{D-META}. After the plan for participation, we outline
+% the proposed schedule. Before detailing the format of the challenge, we give some hints about who we are. At the end,
+% the references are provided.
+% 
+% 
+% \section{Description}
+% The main goal of the \texttt{D-META} Grand Challenge is to foster research and development in multimodal communication
+% and to enable further development of algorithms and techniques for building various multimodal applications. Although
+% we do not aim at providing an unified framework (cf. EMMA), we will start with a particular data set and a precise
+% annotation scheme, in order to benchmark methods targeted at diverse multimodal applications as well as evaluating
+% annotation systems. We hope that this framework will function as a starting point for researchers in the Multimodal
+% Interaction community to share their data sets in a structured fashion.\vspace{0.4cm}
+% 
+% The \texttt{D-META} challenge has these two fundamental and complementary pillars, method benchmarking and
+% annotation evaluation, and several objectives:
+% \begin{itemize}
+% \item To motivate and encourage research and development so as to understand the needs, requirements, possibilities,
+% and
+% challenges that are to be addressed when developing multimodal interactive systems for real-world applications and
+% working systems.
+% \item To target ecologically valid data for automatic system development.
+% \item To provide evaluation criteria for assessing the performance of a system and to compare several systems with
+% each
+% other.
+% \item To increase interest in the rich and multifaceted research area of multimodal interaction.
+% \end{itemize}
+% 
+% On one hand, since multimodal data sets are expensive (both in acquisition and annotation), they are often partially
+% annotated, just to satisfy the targeted application. Hence, the provided annotation may have place for
+% improvement. Providing annotations on data sets will ease two tasks: 1) the genesis of
+% cross-validated annotations and 2) the use of such data sets by the community. Thus, methods targeting multimodal
+% applications may be benchmarked using several common data sets in a transparent way.\vspace{0.4cm}
+% 
+% On the other hand, the set up of an application-oriented challenge will encourage researchers to work with other data
+% sets than theirs. Thus, annotations of these data sets will have to be rich and precise. Systematic evaluation
+% techniques will be required to provide for such annotations which, in turn, will be needed to have a clear
+% benchmarking of methods targeting multimodal applications.\vspace{0.4cm}
+% 
+% In summary, we envision \texttt{D-META} as a two coupled-branch challenge providing a starting point for research and
+% development aiming transparent and publicly available application and annotation evaluation on multimodal data sets.
+
+\section{Scope}
+Authors may submit their methods/benchmarks for applications and/or their systems/comparisons for
+annotations and evaluation. We expect papers covering areas such as: (i) applications of an algorithm to a data set(s)
+to solve precise tasks, (ii) benchmark of several algorithms using the same data set(s), (iii) extensions of the
+annotation scheme with new relevant features, (iv) applications of the data to an automatic system, (v) discussions on
+ecologically valid data sets and (vi) position papers of how to organise the next challenge.\vspace{0.2cm}\\
+The \texttt{D-META} challenge is organize by tasks. Each task is linked to one or more data sets, that will be used to
+evaluate the methods aiming to solve the concerned task. Although the tasks are detailed later on, in the following a
+short description of them is listed:
 \begin{description}
- \item [Data sets] A few data sets need to be selected. These should be as much versatile as possible to in order to
-handle different multimodal applications. In addition, the data sets should be publicly available and free, in order to
-guarantee a fair participation in the challenge.
- \item [Evaluation metrics] They should be set up by the challenge in the call for papers, although we are looking
-forward to the evolution of these metrics in order to be accepted by the community.
- \item [Annotations] They should be provided with the data set. We are interested also in evaluating these annotations
-to converge towards consistently annotated data sets.
+ \item [AVGR] Recognize gesture by means of the vision and the audio.
+ \item [AVSR] Detect, localize and track multiple speakers using audio-visual information.
 \end{description}
 
-Following the Spoken Dialogue Challenge, we want to keep the first round fairly simple and clear, so as to obtain
-feedback from the community and to gather experience for growing the challenge, in the coming years, to cover more
-varied activities, tools and annotation levels.\vspace{0.4cm}
-
-In the next, we describe the main properties of \texttt{D-META}. After the plan for participation, we outline
-the proposed schedule. Before detailing the format of the challenge, we give some hints about who we are. At the end,
-the references are provided.
-
-
-\section{Description}
-The main goal of the \texttt{D-META} Grand Challenge is to foster research and development in multimodal communication
-and to enable further development of algorithms and techniques for building various multimodal applications. Although
-we do not aim at providing an unified framework (cf. EMMA), we will start with a particular data set and a precise
-annotation scheme, in order to benchmark methods targeted at diverse multimodal applications as well as evaluating
-annotation systems. We hope that this framework will function as a starting point for researchers in the Multimodal
-Interaction community to share their data sets in a structured fashion.\vspace{0.4cm}
-
-The \texttt{D-META} challenge has these two fundamental and complementary pillars, method benchmarking and
-annotation evaluation, and several objectives:
-\begin{itemize}
-\item To motivate and encourage research and development so as to understand the needs, requirements, possibilities, and
-challenges that are to be addressed when developing multimodal interactive systems for real-world applications and
-working systems.
-\item To target ecologically valid data for automatic system development.
-\item To provide evaluation criteria for assessing the performance of a system and to compare several systems with each
-other.
-\item To increase interest in the rich and multifaceted research area of multimodal interaction.
-\end{itemize}
-
-On one hand, since multimodal data sets are expensive (both in acquisition and annotation), they are often partially
-annotated, just to satisfy the targeted application. Hence, the provided annotation may have place for
-improvement. Providing annotations on data sets will ease two tasks: 1) the genesis of
-cross-validated annotations and 2) the use of such data sets by the community. Thus, methods targeting multimodal
-applications may be benchmarked using several common data sets in a transparent way.\vspace{0.4cm}
-
-On the other hand, the set up of an application-oriented challenge will encourage researchers to work with other data
-sets than theirs. Thus, annotations of these data sets will have to be rich and precise. Systematic evaluation
-techniques will be required to provide for such annotations which, in turn, will be needed to have a clear
-benchmarking of methods targeting multimodal applications.\vspace{0.4cm}
-
-In summary, we envision \texttt{D-META} as a two coupled-branch challenge providing a starting point for research and
-development aiming transparent and publicly available application and annotation evaluation on multimodal data sets.
-
-\section{Participation plan}
-In order to set up this Grand Challenge, we chose a few existing publicly-available multimodal data sets useful
-for different multimodal applications and/or several annotation evaluations. This choice will be public within the call
-for papers. Authors may submit their methods/benchmarks for applications and/or their systems/comparisons for
-annotations and evaluation.\vspace{0.4cm}
-
-The (non-closed) list of data sets in the \texttt{D-META} challenge is:
-\begin{description}
- \item [RAVEL] The RAVEL data set was presented in \cite{Ravel}. Concerning the multimodal community, this data set
-targets Audio-Visual person detection and tracking and Audio-Visual robot gesture recognition.
- \item [NOMCO] The NOMCO data set was presented in \cite{Paggio10}. It is used to empirically verify
-how gestures and speech interact in feedback, turn management and sequencing.
-\end{description}
-
-We expect papers covering areas such as: (i) applications of an algorithm to a data set(s) to solve precise tasks,
-(ii) benchmark of several algorithms using the same data set(s), (iii) extensions of the annotation scheme with new
-relevant features, (iv) applications of the data to an automatic system, (v) discussions on ecologically valid data sets
-and (vi) position papers of how to organise the next challenge. This will be detailed in the call for papers (CFP).
-
-\section{Schedule}
+\section{Important dates}
 The schedule has the following important dates:
 \begin{description}
- \item[30-Jan-2012] Web site set up and the CFP\\
- The site will be ready by the end of January and it will contain the main ambitions of \texttt{D-META}, what do we
-envision and organisation issues as well as the CFP. All the information related to the challenge will be published
-there.
- \item[19-Mar-2012] Data set choice publicly available\\
- The data set choice will be ready before April, and we will explain what are we looking for (more precisely),
-regarding the chosen data sets.
- \item[15-Jun-2012] Paper deadline
+ \item[19-Mar-2012] Data set annotation is released.
+ \item[31-Jul-2012] Paper deadline
  \item[24-Aug-2012] Author notification
  \item[14-Sep-2012] Camera-ready
- \item[Oct-2012] Presentations at ICMI'2012
-\end{description}
-
-\section{Program Committee}
-The program committee is right now work in progress, but it will contain people with background covering the following
-fields:
-\begin{itemize}
- \item multimodal interactive systems,
- \item machine learning,
- \item ecological data,
- \item multimodal signal processing and
- \item automatic system development.
-\end{itemize}
-People would be contacted in the following weeks, and the final committee will be published in the web site.
-
-\section{Organizers' bio}
-\begin{description}
- \item [Xavier Alameda-Pineda] is PhD candidate at Perception Team, at INRIA Rh\^one-Alpes. He graduated in
-Telecommunication Engineering and Mathematics at Technical University of Catalonia. After a Masters program in computer
-vision, graphics and robotics, he started a PhD in Audio-Visual machine perception. His main research interest lie in
-the field of Audio-Visual fusion (detection, localization and tracking).
- \item [Dirk Heylen] is Professor at University of Twente since September 2011, in the Human Media Interaction group.
-Before, he was visiting professor at CNRS. He is primarily interested in modeling the way conversations influence and
-are influenced by the emotions of the participants. This involves building richer dialogue management models and
-interpreting multi-modal acts.
- \item [Kristiina Jokinen] is adjunct Professor of language technology at the University of Helsinki and visiting
-professor of intelligent user interfaces at the University of Tartu. She strongly collaborates with
-several researchers in Japan, specially from Doshisha University in Kyoto. She is project director of NOMCO
-(University of Helsinki) and Multimodal Interaction (University of Tartu), secretary of SIGDial and the author of two
-books \cite{Jokinen09} and \cite{Jokinen09a}.	
+ \item[Oct-2012] Work presented at \texttt{D-META}'12
 \end{description}
 
 \section{Format}
-Since the domain of the challenge we are proposing is quite vast, we would like to have a full-day workshop at
-ICMI'2012. The challenge authors think that it is very important to keep the website up to date. Hence, we will need
-web support. We would also like to have some funding for the coffee breaks and for the lunch of the attendees.
+The papers should be formatted following the ACM/IEEE format as in the ICMI 2012 proceedings. No more than six pages
+long, the manuscripts should contain the motivation, a brief description of the benchmarked methods, and an extensive
+discussion of the obtained results. No description of the data sets is needed, but the citation to the specified papers.
+
+\section{Detailed tasks}
+The tasks outlined before are explained in detail in the following.
+
+\subsection{AVGR - Audio Visual Gesture Recognition}
+The RAVEL data set was presented in \cite{Ravel}. Concerning the multimodal
+community, this data set
+targets Audio-Visual person detection and tracking and Audio-Visual robot gesture recognition.
+
+\subsection{AVSR - Audio Visual Speaker Recognition}
 
 \bibliographystyle{plain}
-\bibliography{D-META}
+\bibliography{CFP-D-META}
 
 \end{document}
