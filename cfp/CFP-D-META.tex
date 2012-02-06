@@ -17,8 +17,8 @@
 \usepackage{algorithm}
 \usepackage{algorithmic}
 
-\usepackage{times}
-\usepackage{helvet}
+% \usepackage{times}
+% \usepackage{helvet}
 \usepackage{courier}
 
 \usepackage[small,bf]{caption}
@@ -39,6 +39,7 @@
 \usepackage{multirow}
 \usepackage{ifpdf}
 
+\pagestyle{empty}
 \begin{document}
 
 \begin{figure}
@@ -92,6 +93,16 @@ evaluation on multimodal data sets.}
 \end{minipage}
 \end{center}
 \vspace{0.5cm}
+
+
+\begin{center}
+\textbf{\Large Main features}\vspace{0.2cm}\\
+
+\fbox{\begin{minipage}{0.85\textwidth}
+Paper dead line: \textbf{31-Jul-2012}.\vspace{0.1cm}\\
+Summary paper with all the resutls published at IEEE/ACM \textbf{ICMI'2012 Proceedings}.
+\end{minipage}}
+\end{center}
 
 % \section{Introduction}
 % Machine learning-based tasks have been gaining importance in the last decades. This led to several interesting
@@ -170,44 +181,68 @@ evaluation on multimodal data sets.}
 % In summary, we envision \texttt{D-META} as a two coupled-branch challenge providing a starting point for research and
 % development aiming transparent and publicly available application and annotation evaluation on multimodal data sets.
 
-\section{Scope}
+\section*{Scope}
+The \texttt{D-META} challenged is organized by tasks. Each tasks to be solved has one (or more) associated data set. In
+order to evaluate the performance on each task, a Golden Standard will be provided. Such standard consists of (partial)
+annotations and sets the ground truth over the data set concerning the targetted task.\vspace{0.2cm}\\
 Authors may submit their methods/benchmarks for applications and/or their systems/comparisons for
-annotations and evaluation. We expect papers covering areas such as: (i) applications of an algorithm to a data set(s)
-to solve precise tasks, (ii) benchmark of several algorithms using the same data set(s), (iii) extensions of the
+annotations and evaluation. We expect papers covering areas such as: (i) applications of an algorithm to a data
+set(s) to solve precise tasks, (ii) benchmark of several algorithms using the same data set(s), (iii) extensions of the
 annotation scheme with new relevant features, (iv) applications of the data to an automatic system, (v) discussions on
 ecologically valid data sets and (vi) position papers of how to organise the next challenge.\vspace{0.2cm}\\
-The \texttt{D-META} challenge is organize by tasks. Each task is linked to one or more data sets, that will be used to
-evaluate the methods aiming to solve the concerned task. Although the tasks are detailed later on, in the following a
-short description of them is listed:
+In the following, the tasks are outlined, further in the text, they are detailed.
 \begin{description}
  \item [AVGR] Recognize gesture by means of the vision and the audio.
  \item [AVSR] Detect, localize and track multiple speakers using audio-visual information.
+ \item [------] \todo{Set up your task.}
 \end{description}
 
-\section{Important dates}
+\section*{Important dates}
 The schedule has the following important dates:
-\begin{description}
- \item[19-Mar-2012] Data set annotation is released.
- \item[31-Jul-2012] Paper deadline
- \item[24-Aug-2012] Author notification
- \item[14-Sep-2012] Camera-ready
- \item[Oct-2012] Work presented at \texttt{D-META}'12
-\end{description}
+\begin{center}
+\begin{tabular}{rl}
+ \textbf{19-Mar-2012} & Data set annotation is released \vspace{0.1cm}\\
+ \textbf{31-Jul-2012} & Paper deadline \vspace{0.1cm}\\
+ \textbf{24-Aug-2012} & Author notification \vspace{0.1cm}\\
+ \textbf{14-Sep-2012} & Camera-ready \vspace{0.1cm}\\
+    \textbf{Oct-2012} & Work presented at \texttt{D-META}'12 \vspace{0.1cm}\\
+\end{tabular}
+\end{center}
 
-\section{Format}
+\section*{Format}
 The papers should be formatted following the ACM/IEEE format as in the ICMI 2012 proceedings. No more than six pages
 long, the manuscripts should contain the motivation, a brief description of the benchmarked methods, and an extensive
-discussion of the obtained results. No description of the data sets is needed, but the citation to the specified papers.
+discussion of the obtained results. No description of the data sets is needed, but the citation to the reference papers.
+A summary paper collecting the results presented by the authors will be published together with the ICMI proceedings.
 
-\section{Detailed tasks}
+\section*{Detailed tasks}
 The tasks outlined before are explained in detail in the following.
 
-\subsection{AVGR - Audio Visual Gesture Recognition}
-The RAVEL data set was presented in \cite{Ravel}. Concerning the multimodal
-community, this data set
-targets Audio-Visual person detection and tracking and Audio-Visual robot gesture recognition.
+\subsection*{AVGR - Audio Visual Gesture Recognition}
+The aim of this task is to recognize gestures from audio and video. In the Ravel data set \cite{Ravel}, the ``Robot
+Gesture'' scenario was conceived for this particular purpose. Indeed, several actors/actresses performed gestures such
+as ``point'', ``yes'', ``not'', ... The task is the isolated recognition of these robot gestures. 
 
-\subsection{AVSR - Audio Visual Speaker Recognition}
+\paragraph{Evaluation metric} In order to have a common way to evaluate different methods, the ``confusion matrix''
+should be used when targetting this task. A confusion matrix for $N$ classes is an $N\times N$ matrix with its $ij$-th
+element ($i$-th row, $j$-column) means: how many instances os class $i$ the method recognized as class $j$. The
+confusion matrix for all the gestures should be provided. Obviously, testing and training subsets should be different.
+We reccomend a leave-one-out strategy for evaluation.
+
+\subsection*{AVSR - Audio Visual Speaker Recognition}
+The aim of the task is to detect, localize and track speakers from audio-visual sequences. The data used are some
+scenarios of the ``interaction'' part in the Ravel data set \cite{Ravel}. See the data set web
+site\footnote{\url{http://ravel.humavips.eu}} for more information on which sequences to use.
+
+\paragraph{Evaluation metric} To evaluate the results, the (euclidean) distance matrix between the detected speakers and
+the ground-truth speakers. Next, one ground-truth cluster should be associated at most to each detected cluster. The
+assignment procedure is as follows. For each detected cluster its closest ground-truth cluster is computed. If it is
+not closer than a threshold $\tau_{\textrm{loc}}$ it is marked as \textit{false positive}, otherwise the detected
+cluster is assigned to the ground-truth cluster. Then, for each ground-truth cluster the number of detected
+clusters are assigned to it is checked. If there is none, the ground-truth cluster is marked as \textit{missing
+detection}. Otherwise, the closest detected cluster becomes the \textit{true positive} and the remaining ones
+become \textit{false positives}. Recall, precision and accuracy values should be shown in tables (and occasionaly in
+figures also) for values of $\tau_\textrm{loc}$ in the range 1cm -- 50cm.
 
 \bibliographystyle{plain}
 \bibliography{CFP-D-META}
