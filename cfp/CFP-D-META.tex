@@ -194,6 +194,7 @@ In the following, the tasks are outlined, further in the text, they are detailed
 \begin{description}
  \item [AVGR] Recognize gesture by means of the vision and the audio.
  \item [AVSR] Detect, localize and track multiple speakers using audio-visual information.
+ \item [CEP] Estimate the level of engagement in a video-mediated communication.
  \item [------] \todo{Set up your task.}
 \end{description}
 
@@ -243,6 +244,25 @@ clusters are assigned to it is checked. If there is none, the ground-truth clust
 detection}. Otherwise, the closest detected cluster becomes the \textit{true positive} and the remaining ones
 become \textit{false positives}. Recall, precision and accuracy values should be shown in tables (and occasionaly in
 figures also) for values of $\tau_\textrm{loc}$ in the range 1cm -- 50cm.
+
+\subsection{CEP - Conversational Engagement Prediction}
+The aim of this task is to estimate the level of engagement of participants in a group video-mediated communication
+(conversing, responding, following, no interest …). The dataset for this task consists of several audio and video
+recordings as could be recorded from a potential home teleconference system (see
+\cite{Hadris12}\footnote{\url{http://medusa.fit.vutbr.cz/TA2/TA2/}}). Each recording captures interaction between a
+group of co-located participants and one remote participant, involved in activities ranging from casual conversation to
+simple social games. The audio and video recordings are accompanied by gaze recordings of the remote participant,
+manually-annotated head positions and voice activity annotations. The experiments will be done for the remote
+participant for whom gaze data is available.
+
+\paragraph{Evaluation metric} A ground truth annotation for training part of the dataset will be made available to the
+participants. Ground truth for testing part of the dataset will be released after the challenge. Participants are
+expected to provide a short description of their system, and its outputs for short intervals of the testing data in a
+defined simple format for evaluation. The official metric used in the evaluations will be weighted classification cost
+reflecting the similarities between the different levels of engagement. The weights will be made public together with
+the training data. Additionally, DET (Detection Error Tradeoff) curves and confusion matrices will be generated. The
+participants can choose to ignore the provided voice activity annotations as such submissions will be evaluated
+separately from those submissions using them.
 
 \bibliographystyle{plain}
 \bibliography{CFP-D-META}
