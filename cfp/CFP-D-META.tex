@@ -34,6 +34,7 @@
 
 \usepackage{algorithm}
 \usepackage{algorithmic}
+\usepackage[sort&compress]{natbib}
 
 \usepackage[caption=false,font=footnotesize]{subfig}
 \usepackage{multirow}
@@ -192,10 +193,11 @@ annotation scheme with new relevant features, (iv) applications of the data to a
 ecologically valid data sets and (vi) position papers of how to organise the next challenge.\vspace{0.2cm}\\
 In the following, the tasks are outlined, further in the text, they are detailed.
 \begin{description}
- \item [AVGR] Recognize gesture by means of the vision and the audio.
+ \item [AVRGR] Recognize gestures addressed to the robot by means of the vision and the audio.
  \item [AVSR] Detect, localize and track multiple speakers using audio-visual information.
  \item [CEP] Estimate the level of engagement in a video-mediated communication.
- \item [------] \todo{Set up your task.}
+ \item [AVCGR] Recognize conversational gestures in first encouter dialogues.
+ \item [AVFGR] Recognize feedback gestures in first encouter dialogues.
 \end{description}
 
 \section*{Important dates}
@@ -219,8 +221,9 @@ A summary paper collecting the results presented by the authors will be publishe
 \section*{Detailed tasks}
 The tasks outlined before are explained in detail in the following.
 
-\subsection*{AVGR - Audio Visual Gesture Recognition}
-The aim of this task is to recognize gestures from audio and video. In the Ravel data set \cite{Ravel}, the ``Robot
+\subsection*{AVGR - Audio Visual Robot Gesture Recognition}
+The aim of this task is to recognize gestures from audio and video. In the Ravel data set \cite{Ravel,Humavips}, the
+``Robot
 Gesture'' scenario was conceived for this particular purpose. Indeed, several actors/actresses performed gestures such
 as ``point'', ``yes'', ``not'', ... The task is the isolated recognition of these robot gestures. 
 
@@ -235,17 +238,17 @@ The aim of the task is to detect, localize and track speakers from audio-visual 
 scenarios of the ``interaction'' part in the Ravel data set \cite{Ravel}. See the data set web
 site\footnote{\url{http://ravel.humavips.eu}} for more information on which sequences to use.
 
-\paragraph{Evaluation metric} To evaluate the results, the (euclidean) distance matrix between the detected speakers and
-the ground-truth speakers. Next, one ground-truth cluster should be associated at most to each detected cluster. The
-assignment procedure is as follows. For each detected cluster its closest ground-truth cluster is computed. If it is
-not closer than a threshold $\tau_{\textrm{loc}}$ it is marked as \textit{false positive}, otherwise the detected
-cluster is assigned to the ground-truth cluster. Then, for each ground-truth cluster the number of detected
-clusters are assigned to it is checked. If there is none, the ground-truth cluster is marked as \textit{missing
-detection}. Otherwise, the closest detected cluster becomes the \textit{true positive} and the remaining ones
-become \textit{false positives}. Recall, precision and accuracy values should be shown in tables (and occasionaly in
-figures also) for values of $\tau_\textrm{loc}$ in the range 1cm -- 50cm.
+\paragraph{Evaluation metric} In order to evaluate the results, the (euclidean) distance matrix between the detected
+speakers and the ground-truth speakers should be computed. Each ground-truth speaker should be associated at most to one
+detected speaker. The assignment procedure is as follows. For each detected speaker its closest ground-truth speaer is
+computed. If it is not closer than a threshold $\tau_{\textrm{loc}}$ it is marked as \textit{false positive}, otherwise
+the detected speaker is assigned to the ground-truth speaker. Then, for each ground-truth speaker the number of detected
+clusters are assigned to it is checked. If there is none, it is marked as \textit{missing detection}. Otherwise, the
+closest detected speaker becomes the \textit{true positive} and the remaining ones become \textit{false positives}.
+Recall, precision and accuracy values should be shown in tables (and occasionaly in figures also) for values of
+$\tau_{\textrm{loc}}$ in the range 1cm to 50cm.
 
-\subsection{CEP - Conversational Engagement Prediction}
+\subsection*{CEP - Conversational Engagement Prediction}
 The aim of this task is to estimate the level of engagement of participants in a group video-mediated communication
 (conversing, responding, following, no interest …). The dataset for this task consists of several audio and video
 recordings as could be recorded from a potential home teleconference system (see
@@ -263,6 +266,24 @@ reflecting the similarities between the different levels of engagement. The weig
 the training data. Additionally, DET (Detection Error Tradeoff) curves and confusion matrices will be generated. The
 participants can choose to ignore the provided voice activity annotations as such submissions will be evaluated
 separately from those submissions using them.
+
+\subsection*{AVCGR - Audio Visual Conversational Gesture Recognition}
+The aim of the task is to recognize the interlocutor's gestures in  conversational interactions. The data has been
+collected within the  NOMCO project \cite{Nomco}, and concerns first encounter dialogues in  Finnish and Swedish
+languages.
+
+\paragraph{Evaluation metric}
+To evaluate the results, a frame-based counting will be applied. The recognition method should output one of the
+annotated classes or ``no class'' for each frame. This will be compared to the ground truth in order to build a
+confusion matrix. Thus, the evaluation is similar to the AVRGR task.
+
+\subsection*{AVFGR - Audio Visual Feedback Gesture Recognition}
+The aim of the task is to classify the interlocutor's gestures into those that are related to feedback giving in
+conversational interactions, and those that are other type of gestures (e.g. scratching an itchy arm). The data used is
+collected within the NOMCO project \cite{Nomco} and concerns first encounter dialogues in Finnish and Swedish languages.
+
+\paragraph{Evaluation metric} In order to evaluate the performance of the methods targetting this task, the confusion
+matrix and the f1-score should be provided.
 
 \bibliographystyle{plain}
 \bibliography{CFP-D-META}
